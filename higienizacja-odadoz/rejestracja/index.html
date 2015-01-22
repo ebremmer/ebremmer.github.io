@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Ogólnopolska Konferencja Ergonomiczna | Rejestracja | DentalProcess.pl</title>
+		<meta name="description" content="Higienizacja od A do Z | Rejestracja | DentalProcess.pl" />
+		<meta name="keywords" content="rejestracja, szkolenie, asystentka, higienistka detntalprocess" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+		<script src="//www.parsecdn.com/js/parse-1.3.3.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Top Navigation -->
+			<header class="codrops-header">
+				<h1>Higienizacja od A do Z<span>Rejestracja</span></h1>
+			</header>
+			<section>
+				<form id="theForm" class="simform" autocomplete="off">
+					<div class="simform-inner">
+						<ol class="questions">
+							<li>
+								<span><label for="q1">Imię i Nazwisko</label></span>
+								<input id="name" name="q1" type="text"/>
+							</li>
+							<li>
+								<span><label for="q2">Telefon kontaktowy</label></span>
+								<input id="phone" name="q2" type="text"/>
+							</li>
+							<li>
+								<span><label for="q3">Adres e-mail</label></span>
+								<input id="mail" name="q3" type="text"/>
+							</li>
+							<li>
+								<span><label for="q4">Zgoda na przetwarzanie danych (wpisz tak)</label></span>
+								<input id="dataagreement" name="q4" type="text"/>
+							</li>
+						</ol><!-- /questions -->
+						<button class="submit" type="submit">Wyślij</button>
+						<div class="controls">
+							<button class="next"></button>
+							<div class="progress"></div>
+							<span class="number">
+								<span class="number-current"></span>
+								<span class="number-total"></span>
+							</span>
+							<span class="error-message"></span>
+						</div><!-- / controls -->
+					</div><!-- /simform-inner -->
+					<span class="final-message"></span>
+				</form><!-- /simform -->
+			</section>
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/stepsForm.js"></script>
+		<script>
+			Parse.initialize("0KJUPT4eZ1O2RsZN6sDyoZ3IfR3Y2nN9NLWYIoJ8", "Zesi4ClaVHXlh8HtwV14078AbBPmkPCffDb9p7QW");
+			var theForm = document.getElementById( 'theForm' );
+
+			new stepsForm( theForm, {
+				onSubmit : function( form ) {
+					// hide form
+					classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
+
+
+					var ContactCls = Parse.Object.extend("Contact");
+					var contact = new ContactCls();
+					var messageEl = theForm.querySelector( '.final-message' );
+
+					contact.save({
+					  name: form[0].value,
+					  phone: form[1].value,
+					  mail: form[2].value,
+						processAgreement: form[3].value,
+						partnerProcessAgreement: form[4].value,
+						event: window.location.pathname.split( '/' )[1]
+					}, {
+					  success: function(gameScore) {
+							messageEl.innerHTML = 'Dziękujemy! Pozostaniemy w kontakcie.';
+							classie.addClass( messageEl, 'show' );
+					  },
+					  error: function(gameScore, error) {
+							messageEl.innerHTML = 'Wystąpił błąd, prosimy o kontakt na kontakt@dentalprocess.pl.';
+							classie.addClass( messageEl, 'show' );
+					  }
+					});
+
+					/*
+					form.submit()
+					or
+					AJAX request (maybe show loading indicator while we don't have an answer..)
+					*/
+
+					// let's just simulate something...
+				}
+			} );
+		</script>
+	</body>
+</html>
