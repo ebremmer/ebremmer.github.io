@@ -716,6 +716,12 @@ xcustom form elements
   background-size: cover;
 }
 
+.endopc {
+  height: 455px;
+  background: url("../img/endo-pc.jpg") no-repeat center center;
+  background-size: cover;
+}
+
 .contactpc {
   height: 355px;
   background: url("../img/dp-contact-qr.jpg") no-repeat center center;
