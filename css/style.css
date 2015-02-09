@@ -686,6 +686,12 @@ xcustom form elements
   background-size: cover;
 }
 
+.orthpc {
+  height: 455px;
+  background: url("../img/ortho-pc.jpg") no-repeat center center;
+  background-size: cover;
+}
+
 .higpc {
   height: 455px;
   background: url("../img/hig-pc.jpg") no-repeat center center;
