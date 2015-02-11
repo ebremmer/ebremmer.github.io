@@ -256,6 +256,11 @@ xgallery
   padding: 26px 5%;
   width: 100%;
 }
+cd-gallery.container {
+    width:400px;
+    margin: 50px auto 0 auto;
+}
+
 .cd-gallery li {
   /*margin-left: 1.6em;*/
   margin-bottom: 1.6em;
@@ -734,6 +739,12 @@ xcustom form elements
   background-size: contain;
 }
 
+.thankspc {
+  height: 455px;
+  background: url("../img/thanks-pc.jpg") no-repeat center center;
+  background-size: cover;
+}
+
 .sl {
   background: url("../img/sl.png") no-repeat center center;
   height: 100%;
@@ -742,6 +753,14 @@ xcustom form elements
 
 .card {
   background-color: white;
+}
+
+.card.ms {
+  max-width:400px;
+  width:100%;
+  text-align:center;
+  /*display: table;*/
+  margin: 0 auto;
 }
 
 .card .content {

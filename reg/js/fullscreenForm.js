@@ -1,13 +1,4 @@
-/**
- * fullscreenForm.js v1.0.0
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- *
- * Copyright 2014, Codrops
- * http://www.codrops.com
- */
+
 ;( function( window ) {
 
 	'use strict';
@@ -245,9 +236,16 @@
 				processAgreement: self.formEl[3].value,
 				event: window.location.pathname.split( '/' )[1]
 			}, {
-				success: function(gameScore) {
+				success: function(res) {
+					var nlocation = "https://sklep.przelewy24.pl/zakup.php?z24_id_sprzedawcy=33685&z24_currency=pln&z24_return_url=http%3A%2F%2Fdentalprocess.pl%2Fthanks.html&z24_language=pl&k24_kraj=PL&z24_crc=e12a94ef"
+														+ "z24_id_sprzedawcy=33685&z24_crc=f4414c27a23b4f6e&z24_return_url=http%3A%2F%2Fdentalprocess.pl"
+														+ "&z24_nazwa=" + encodeURIComponent(res.id + " orthoday")
+														+ "&z24_kwota=" + encodeURIComponent((240 * 100))
+														+ "&k24_nazwa=" + encodeURIComponent(self.formEl[0].value)
+														+ "&k24_email=" + encodeURIComponent(self.formEl[2].value);
+					window.open(nlocation);
 				},
-				error: function(gameScore, error) {
+				error: function(res, error) {
 						this._showError( 'Wystąpił problem, prosimy o infromacje na kontakt@dentalprocess.pl' );
 						return false;
 				}
