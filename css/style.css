@@ -708,7 +708,11 @@ xcustom form elements
   background: url("../img/nec-pc.jpg") no-repeat center center;
   background-size: cover;
 }
-
+.exapc {
+  height: 455px;
+  background: url("../img/exa-pc.jpg") no-repeat center center;
+  background-size: cover;
+}
 .dsdapppc {
   height: 455px;
   background: url("../img/dsdapp-pc.jpg") no-repeat center center;

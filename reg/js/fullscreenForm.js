@@ -61,7 +61,9 @@
 		// show [current field]/[total fields] status
 		ctrlNavPosition : true,
 		// reached the review and submit step
-		onReview : function() { return false; }
+		onReview : function() { return false; },
+
+		price: 0
 	};
 
 	/**
@@ -239,10 +241,10 @@
 				success: function(res) {
 					var nlocation = "https://sklep.przelewy24.pl/zakup.php?z24_id_sprzedawcy=33685&z24_currency=pln&z24_return_url=http%3A%2F%2Fdentalprocess.pl%2Fthanks.html&z24_language=pl&k24_kraj=PL&z24_crc=e12a94ef"
 														+ "&z24_nazwa=" + encodeURIComponent(res.id + "-orthoday")
-														+ "&z24_kwota=" + encodeURIComponent((230 * 100))
+														+ "&z24_kwota=" + encodeURIComponent((self.options.price * 100))
 														+ "&k24_nazwa=" + encodeURIComponent(self.formEl[0].value)
 														+ "&k24_email=" + encodeURIComponent(self.formEl[2].value);
-					console.log(nlocation);
+					// console.log(nlocation);
 					window.location = nlocation;
 				},
 				error: function(res, error) {
