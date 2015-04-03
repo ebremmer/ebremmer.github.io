@@ -183,6 +183,34 @@ button.fs-continue,
 	pointer-events: none;
 }
 
+.fs-fields > li label.fs-field-label-tac {
+	display: inline-block;
+	padding: 0 5px 0.1em 0;
+	font-weight: 700;
+	pointer-events: none;
+}
+
+.fs-fields > li > div.tac {
+	padding: 0 5px 0.9em 0;
+}
+.fs-fields > li > div.tac > a {
+	color: rgb(252,225,114);
+	font-size: 0.5em;
+	line-height: .6em;
+}
+
+.fs-fields > li > div.tac > a:hover {
+	color: rgba(0,0,0, .4);
+	font-size: 0.6em;
+	line-height: .7em;
+}
+
+.fs-form-overview .fs-fields > li > div.tac > a {
+	color: rgba(0,0,0, .4);
+	font-size: 0.6em;
+	line-height: .7em;
+}
+
 .fs-form-full .fs-fields > li label[data-info]::after {
 	position: relative;
 	display: inline-block;
@@ -748,7 +776,7 @@ button.fs-continue:hover {
 	min-height: 100%;
 	text-align: center;
 	vertical-align: middle;
-	
+
 }
 .fs-greet h1 {
 	font-size: 3em;

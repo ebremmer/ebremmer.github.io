@@ -289,7 +289,7 @@
             encodeURIComponent(self.formEl[0].value) +
             "&k24_email=" + encodeURIComponent(self.formEl[2].value);
           // console.log(nlocation);
-          // window.location = nlocation;
+          window.location = nlocation;
         },
         error: function(res, error) {
           this._showError(

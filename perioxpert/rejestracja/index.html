@@ -39,8 +39,8 @@
 	<body>
 		<div class="fs-greet">
 					<h1>Dziękujemy</h1>
-					<p>Skontaktujemy się w najbliższym czasie w sprawie płatności.</p>
-					<!-- <p>Za chwile przekierujemy cię na strone płatności...</p> -->
+					<!-- <p>Skontaktujemy się w najbliższym czasie w sprawie płatności.</p> -->
+					<p>Za chwile przekierujemy cię na strone płatności...</p>
 		</div>
 		<div class="container">
 
@@ -71,10 +71,24 @@
 								<span><input id="q3b" name="agreement" type="radio" value="nie" required/><label for="q3b" class="radio-conversion">Nie</label></span>
 							</div>
 						</li>
+
+						<li data-input-trigger>
+							<label class="fs-field-label-tac fs-anim-upper" for="q4" data-info="Bez niej nie możemy kontynuować...">
+								Akceptuję Regulamin?
+							</label>
+							<div class="tac">
+								<a href="/regulamin.html" target="_blank">Zapoznaj się z regulaminem</a>
+							</div>
+
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<span><input id="q4a" name="tac" type="radio" value="tak" required/><label for="q4a" class="radio-mobile">Tak</label></span>
+								<span><input id="q4b" name="tac" type="radio" value="nie" required/><label for="q4b" class="radio-conversion">Nie</label></span>
+							</div>
+						</li>
 					</ol><!-- /fs-fields -->
 					<span class="fs-message-error"></span>
 
-					<!-- <span class="fs-pay-info">Po wybraniu opcji zapłać przekierujemy cię na stronę naszego pratnera platnosci24.pl w celu dokonania zlecenia płatności.</span> -->
+					<span class="fs-pay-info">Po wybraniu opcji zapłać przekierujemy cię na stronę naszego pratnera platnosci24.pl w celu dokonania zlecenia płatności.</span>
 					<button class="fs-submit" type="submit">Wyślij</button>
 				</form><!-- /fs-form -->
 			</div><!-- /fs-form-wrap -->
