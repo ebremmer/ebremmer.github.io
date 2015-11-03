@@ -283,6 +283,10 @@
 				event: evName
 			}, {
 				success: function(res) {
+					try {
+						fbq('track', 'Purchase', {value: '1.00', currency: 'PLN'});
+					} catch(e) {}
+					
 					var nlocation =
 						"https://sklep.przelewy24.pl/zakup.php?z24_id_sprzedawcy=33685&z24_currency=pln&z24_return_url=http%3A%2F%2Fdentalprocess.pl%2Fthanks.html&z24_language=pl&k24_kraj=PL&z24_crc=e12a94ef" +
 						"&z24_nazwa=" + encodeURIComponent(res.id +
