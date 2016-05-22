@@ -1,10 +1,10 @@
 ;
-(function(window) {
+(function (window) {
 
 	'use strict';
 
 	var support = {
-			animations: Modernizr.cssanimations
+		animations: Modernizr.cssanimations
 		},
 		animEndEventNames = {
 			'WebkitAnimation': 'webkitAnimationEnd',
@@ -14,6 +14,16 @@
 		},
 		// animation end event name
 		animEndEventName = animEndEventNames[Modernizr.prefixed('animation')];
+
+	function getParameterByName(name, url) {
+		if (!url) url = window.location.href;
+		name = name.replace(/[\[\]]/g, "\\$&");
+		var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+			results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		return decodeURIComponent(results[2].replace(/\+/g, " "));
+	}
 
 	/**
 	 * extend obj function
@@ -68,7 +78,7 @@
 		// show [current field]/[total fields] status
 		ctrlNavPosition: true,
 		// reached the review and submit step
-		onReview: function() {
+		onReview: function () {
 			return false;
 		},
 
@@ -79,7 +89,7 @@
 	 * init function
 	 * initialize and cache some vars
 	 */
-	FForm.prototype._init = function() {
+	FForm.prototype._init = function () {
 		// the form element
 		this.formEl = this.el.querySelector('form');
 
@@ -112,7 +122,7 @@
 	 * addControls function
 	 * create and insert the structure for the controls
 	 */
-	FForm.prototype._addControls = function() {
+	FForm.prototype._addControls = function () {
 		// main controls wrapper
 		this.ctrls = createElement('div', {
 			cName: 'fs-controls',
@@ -181,7 +191,7 @@
 	 * addErrorMsg function
 	 * create and insert the structure for the error message
 	 */
-	FForm.prototype._addErrorMsg = function() {
+	FForm.prototype._addErrorMsg = function () {
 		// error message
 		this.msgError = this.el.querySelector('.fs-message-error');
 		// createElement( 'span', { cName : 'fs-message-error', appendTo : this.el } );
@@ -190,25 +200,25 @@
 	/**
 	 * init events
 	 */
-	FForm.prototype._initEvents = function() {
+	FForm.prototype._initEvents = function () {
 		var self = this;
 
 		// show next field
-		this.ctrlContinue.addEventListener('click', function() {
+		this.ctrlContinue.addEventListener('click', function () {
 			self._nextField();
 		});
 
 		// navigation dots
 		if (this.options.ctrlNavDots) {
-			this.ctrlNavDots.forEach(function(dot, pos) {
-				dot.addEventListener('click', function() {
+			this.ctrlNavDots.forEach(function (dot, pos) {
+				dot.addEventListener('click', function () {
 					self._showField(pos);
 				});
 			});
 		}
 
 		// jump to next field without clicking the continue button (for fields/list items with the attribute "data-input-trigger")
-		this.fields.forEach(function(fld) {
+		this.fields.forEach(function (fld) {
 			if (fld.hasAttribute('data-input-trigger')) {
 				var input = fld.querySelector('input[type="radio"]') || /*fld.querySelector( '.cs-select' ) ||*/
 					fld.querySelector('select'); // assuming only radio and select elements (TODO: exclude multiple selects)
@@ -216,29 +226,29 @@
 
 				switch (input.tagName.toLowerCase()) {
 					case 'select':
-						input.addEventListener('change', function() {
+						input.addEventListener('change', function () {
 							self._nextField();
 						});
 						break;
 
 					case 'input':
 						[].slice.call(fld.querySelectorAll('input[type="radio"]')).forEach(
-							function(inp) {
-								inp.addEventListener('change', function(ev) {
+							function (inp) {
+								inp.addEventListener('change', function (ev) {
 									self._nextField();
 									return false;
 								});
 							});
 						break;
 
-						/*
-					// for our custom select we would do something like:
-					case 'div' :
-						[].slice.call( fld.querySelectorAll( 'ul > li' ) ).forEach( function( inp ) {
-							inp.addEventListener( 'click', function(ev) { self._nextField(); } );
-						} );
-						break;
-					*/
+					/*
+				// for our custom select we would do something like:
+				case 'div' :
+					[].slice.call( fld.querySelectorAll( 'ul > li' ) ).forEach( function( inp ) {
+						inp.addEventListener( 'click', function(ev) { self._nextField(); } );
+					} );
+					break;
+				*/
 				}
 			}
 
@@ -246,7 +256,7 @@
 		});
 
 		// keyboard navigation events - jump to next field when pressing enter
-		document.addEventListener('keydown', function(ev) {
+		document.addEventListener('keydown', function (ev) {
 			if (!self.isLastStep && ev.target.tagName.toLowerCase() !==
 				'textarea') {
 				var keyCode = ev.keyCode || ev.which;
@@ -257,10 +267,8 @@
 			}
 		});
 
-		Parse.initialize("0KJUPT4eZ1O2RsZN6sDyoZ3IfR3Y2nN9NLWYIoJ8",
-			"Zesi4ClaVHXlh8HtwV14078AbBPmkPCffDb9p7QW");
 
-		this.formEl.addEventListener('submit', function(e) {
+		this.formEl.addEventListener('submit', function (e) {
 			e.preventDefault();
 
 			if (self.isLastStep) {
@@ -269,41 +277,86 @@
 				}
 			}
 
-			var ContactCls = Parse.Object.extend("Contact");
-			var contact = new ContactCls();
 			// var messageEl = theForm.querySelector( '.final-message' );
-
+			var me = this;
 			var evName = window.location.pathname.split('/')[1];
+			var evDate = getParameterByName('eon');
 
-			contact.save({
-				name: self.formEl[0].value,
-				phone: self.formEl[1].value,
-				mail: self.formEl[2].value,
-				processAgreement: self.formEl[3].value,
-				event: evName
-			}, {
-				success: function(res) {
-					try {
-						fbq('track', 'Purchase', {value: '1.00', currency: 'PLN'});
-					} catch(e) {}
-					
-					var nlocation =
-						"https://sklep.przelewy24.pl/zakup.php?z24_id_sprzedawcy=33685&z24_currency=pln&z24_return_url=http%3A%2F%2Fdentalprocess.pl%2Fthanks.html&z24_language=pl&k24_kraj=PL&z24_crc=e12a94ef" +
-						"&z24_nazwa=" + encodeURIComponent(res.id +
-							"-" + evName) + "&z24_kwota=" + encodeURIComponent((
-							self.options.price * 100)) + "&k24_nazwa=" +
-						encodeURIComponent(self.formEl[0].value) +
-						"&k24_email=" + encodeURIComponent(self.formEl[2].value);
-					// console.log(nlocation);
-					window.location = nlocation;
-				},
-				error: function(res, error) {
-					this._showError(
-						'Wystąpił problem, prosimy o infromacje na kontakt@dentalprocess.pl'
-					);
-					return false;
+			$.ajax({
+				url: 'https://script.google.com/macros/s/AKfycbzxR3VUM48jxv3juhYU2-ou2vayxtz7aeOH8-o2n7cemLBxJqg/exec',
+				type: 'POST',
+				data: {
+					eid: evName,
+					name: self.formEl[0].value,
+					phone: self.formEl[1].value,
+					email: self.formEl[2].value,
+					practiceURL: '',
+					comments: '',
+					eventOn: evDate
 				}
+			}).done(function (regres) {
+				console.log(regres);
+				if ('success' === regres.result) {
+					try {
+						fbq('track', 'Purchase', { value: '1.00', currency: 'PLN' });
+					} catch (e) { }
+
+					if (regres.trxRequest) {
+						window.location = regres.trxRequest;
+					} else {
+							alert(
+								'Wystąpił problem, prosimy o infromacje na kontakt@dentalprocess.pl'
+							);
+					}					
+					// $.ajax({
+					// 			url: 'https://sandbox.przelewy24.pl/index.php',
+					// 			type: 'POST',
+					// 			data: {
+					// 				p24_merchant_id: 33685,
+					// 				p24_pos_id: 33685,
+					// 				p24_session_id: regres.txn + "-" + evName,
+					// 				p24_amount: self.options.price * 100,
+					// 				p24_currency: 'PLN',
+					// 				p24_description: regres.txn + "-" + evName,
+					// 				p24_email: self.formEl[2].value,
+					// 				p24_country: 'PL',
+					// 				p24_language: 'pl',
+					// 				p24_url_return: 'https://dentalprocess.pl/thanks.html?tid=' + regres.txn,
+					// 				p24_api_version: '3.2',
+					// 				p24_sign: regres.sign
+					// 			}
+					// 		}).done(function (p24res) {					
+					// 			if (p24res.error === 0) {
+					// 				window.location = 'https://secure.przelewy24.pl/trnRequest/' + p24res.token;
+					// 			}
+					// 		}).fail(function() {
+					// 			me._showError(
+					// 							'Wystąpił problem, prosimy o infromacje na kontakt@dentalprocess.pl'
+					// 						);
+					// 		});
+
+										
+				// var nlocation =
+				// 	"https://sklep.przelewy24.pl/zakup.php?z24_id_sprzedawcy=33685&z24_currency=pln&z24_return_url=https%3A%2F%2Fdentalprocess.pl%2Fthanks.html%3Fpid%3D" + regres.txn + "&z24_language=pl&k24_kraj=PL&z24_crc=e12a94ef" +
+				// 	"&z24_nazwa=" + encodeURIComponent(regres.txn +
+				// 		"-" + evName) + "&z24_kwota=" + encodeURIComponent((
+				// 			self.options.price * 100)) + "&k24_nazwa=" +
+				// 	encodeURIComponent(self.formEl[0].value) +
+				// 	"&k24_email=" + encodeURIComponent(self.formEl[2].value);
+				// console.log(nlocation);
+				// window.location = nlocation;
+				} else {
+					me._showError(
+									'Wystąpił problem, prosimy o infromacje na kontakt@dentalprocess.pl'
+								);
+				}
+			})
+			.fail(function() {
+				me._showError(
+								'Wystąpił problem, prosimy o infromacje na kontakt@dentalprocess.pl'
+							);
 			});
+
 
 			classie.remove(document.body, 'overview');
 			classie.add(document.body, 'thank');
@@ -319,7 +372,7 @@
 	 * nextField function
 	 * jumps to the next field
 	 */
-	FForm.prototype._nextField = function(backto) {
+	FForm.prototype._nextField = function (backto) {
 
 		if (this.isLastStep) {
 			if (!this._validadeAll()) {
@@ -379,7 +432,7 @@
 
 		// after animation ends remove added classes from fields
 		var self = this,
-			onEndAnimationFn = function(ev) {
+			onEndAnimationFn = function (ev) {
 				if (support.animations) {
 					this.removeEventListener(animEndEventName, onEndAnimationFn);
 				}
@@ -435,7 +488,7 @@
 	 * showField function
 	 * jumps to the field at position pos
 	 */
-	FForm.prototype._showField = function(pos) {
+	FForm.prototype._showField = function (pos) {
 		if (pos === this.current || pos < 0 || pos > this.fieldsCount - 1) {
 			return false;
 		}
@@ -446,7 +499,7 @@
 	 * updateFieldNumber function
 	 * changes the current field number
 	 */
-	FForm.prototype._updateFieldNumber = function() {
+	FForm.prototype._updateFieldNumber = function () {
 		if (this.options.ctrlNavPosition) {
 			// first, create next field number placeholder
 			this.ctrlFldStatusNew = document.createElement('span');
@@ -458,7 +511,7 @@
 
 			// add class "fs-show-next" or "fs-show-prev" depending on the navigation direction
 			var self = this;
-			setTimeout(function() {
+			setTimeout(function () {
 				classie.add(self.ctrlFldStatus, self.navdir === 'next' ?
 					'fs-show-next' : 'fs-show-prev');
 			}, 25);
@@ -469,7 +522,7 @@
 	 * progress function
 	 * updates the progress bar by setting its width
 	 */
-	FForm.prototype._progress = function() {
+	FForm.prototype._progress = function () {
 		if (this.options.ctrlProgress) {
 			this.ctrlProgress.style.width = this.current * (100 / this.fieldsCount) +
 				'%';
@@ -480,7 +533,7 @@
 	 * updateNav function
 	 * updates the navigation dots
 	 */
-	FForm.prototype._updateNav = function() {
+	FForm.prototype._updateNav = function () {
 		if (this.options.ctrlNavDots) {
 			classie.remove(this.ctrlNav.querySelector('button.fs-dot-current'),
 				'fs-dot-current');
@@ -493,7 +546,7 @@
 	 * showCtrl function
 	 * shows a control
 	 */
-	FForm.prototype._showCtrl = function(ctrl) {
+	FForm.prototype._showCtrl = function (ctrl) {
 		classie.add(ctrl, 'fs-show');
 	}
 
@@ -501,11 +554,11 @@
 	 * hideCtrl function
 	 * hides a control
 	 */
-	FForm.prototype._hideCtrl = function(ctrl) {
+	FForm.prototype._hideCtrl = function (ctrl) {
 		classie.remove(ctrl, 'fs-show');
 	}
 
-	FForm.prototype._validadeAll = function() {
+	FForm.prototype._validadeAll = function () {
 		for (var i = 0; i < this.fields.length; i++) {
 			this.current = i;
 			if (!this._validade()) {
@@ -516,7 +569,7 @@
 	}
 
 	// TODO: this is a very basic validation function. Only checks for required fields..
-	FForm.prototype._validade = function() {
+	FForm.prototype._validade = function () {
 		var fld = this.fields[this.current],
 			input = fld.querySelector('input[required]') || fld.querySelector(
 				'textarea[required]') || fld.querySelector('select[required]'),
@@ -529,14 +582,14 @@
 				if (input.type === 'radio' || input.type === 'checkbox') {
 					var checked = 0;
 					[].slice.call(fld.querySelectorAll('input[type="' + input.type +
-						'"]')).forEach(function(inp) {
-						if (inp.checked) {
-							++checked;
-						}
-						if (inp.checked && inp.value === 'nie') {
-							error = 'NOAGREEMENT';
-						}
-					});
+						'"]')).forEach(function (inp) {
+							if (inp.checked) {
+								++checked;
+							}
+							if (inp.checked && inp.value === 'nie') {
+								error = 'NOAGREEMENT';
+							}
+						});
 					if (!checked) {
 						error = 'NOVAL';
 					}
@@ -579,7 +632,7 @@
 	}
 
 	// TODO
-	FForm.prototype._showError = function(err) {
+	FForm.prototype._showError = function (err) {
 		var message = '';
 		switch (err) {
 			case 'NOVAL':
@@ -594,14 +647,14 @@
 			case 'NOAGREEMENT':
 				message = 'Zgoda jest wymagana, bez niej nie możemy kontynuować...';
 				break;
-				// ...
+			// ...
 		};
 		this.msgError.innerHTML = message;
 		this._showCtrl(this.msgError);
 	}
 
 	// clears/hides the current error message
-	FForm.prototype._clearError = function() {
+	FForm.prototype._clearError = function () {
 		this._hideCtrl(this.msgError);
 	}
 
