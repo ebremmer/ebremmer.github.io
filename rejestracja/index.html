@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Rejestracja na Szkolenie | DentalProcess.pl</title>
+		<meta name="description" content="Rejestracja na szkolenie" />
+
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="/reg/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="/reg/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="/reg/css/component.css" />
+		<link rel="stylesheet" type="text/css" href="/reg/css/cs-select.css" />
+		<link rel="stylesheet" type="text/css" href="/reg/css/cs-skin-boxes.css" />
+		<script src="/reg/js/modernizr.custom.js"></script>
+		
+
+		<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/img/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png">
+		<meta name="apple-mobile-web-app-title" content="DentalProcess">
+		<link rel="icon" type="image/png" href="/img/favicon-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/img/favicon-160x160.png" sizes="160x160">
+		<link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+		<meta name="msapplication-TileColor" content="#3d2b4c">
+		<meta name="msapplication-TileImage" content="/img/mstile-144x144.png">
+		<meta name="application-name" content="DentalProcess">
+
+	</head>
+	<body>
+		<div class="fs-greet">
+					<h1>Dziękujemy</h1>
+					<!-- <p>Skontaktujemy się w najbliższym czasie w sprawie płatności.</p> -->
+					<p>Za chwile przekierujemy cię na strone płatności...</p>
+		</div>
+		<div class="container">
+
+			<div class="fs-form-wrap" id="fs-form-wrap">
+				<div class="fs-title">
+					<h1>Rejestracja</h1>
+				</div>
+				<form id="regform" class="fs-form fs-form-full" autocomplete="off">
+					<ol class="fs-fields">
+
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q1">Imię i Nazwisko?</label>
+							<input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Anna Nowak" required/>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q2" data-info="Zadzwonimy tylko w nagłych przypadkach...">Telefon kontaktowy?</label>
+							<input class="fs-anim-lower" id="q2" name="q2" type="tel" placeholder="+48 xxx xxx xxx" required/>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q2" data-info="Nie będziemy wysyłać spamu, obiecujemy...">Adres e-mail?</label>
+							<input class="fs-anim-lower" id="q2" name="q2" type="email" placeholder="anna@nowak.pl" required/>
+						</li>
+
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="q3" data-info="Bez niej nie możemy kontynuować...">Zgoda na przetwarzanie danych?</label>
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<span><input id="q3a" name="agreement" type="radio" value="tak" required/><label for="q3a" class="radio-mobile">Tak</label></span>
+								<span><input id="q3b" name="agreement" type="radio" value="nie" required/><label for="q3b" class="radio-conversion">Nie</label></span>
+							</div>
+						</li>
+
+						<li data-input-trigger>
+							<label class="fs-field-label-tac fs-anim-upper" for="q4" data-info="Bez niej nie możemy kontynuować...">
+								Akceptuję Regulamin?
+							</label>
+							<div class="tac">
+								<a href="/regulamin" target="_blank">Zapoznaj się z regulaminem</a>
+							</div>
+
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<span><input id="q4a" name="tac" type="radio" value="tak" required/><label for="q4a" class="radio-mobile">Tak</label></span>
+								<span><input id="q4b" name="tac" type="radio" value="nie" required/><label for="q4b" class="radio-conversion">Nie</label></span>
+							</div>
+						</li>
+					</ol><!-- /fs-fields -->
+					<span class="fs-message-error"></span>
+
+					<span class="fs-pay-info">Po wybraniu opcji zapłać przekierujemy cię na stronę naszego pratnera platnosci24.pl w celu dokonania zlecenia płatności.</span>
+					<button class="fs-submit" type="submit">Wyślij</button>
+				</form><!-- /fs-form -->
+			</div><!-- /fs-form-wrap -->
+
+		</div><!-- /container -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="/reg/js/classie.js"></script>
+		<script src="/reg/js/selectFx.js"></script>
+		<script src="/reg/js/fullscreenForm.js"></script>
+		<script>
+			(function() {
+				var formWrap = document.getElementById( 'fs-form-wrap' );
+
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
+					new SelectFx( el, {
+						stickyPlaceholder: false,
+						onChange: function(val){
+							document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+						}
+					});
+				} );
+
+				new FForm( formWrap, {
+					onReview : function() {
+						classie.add( document.body, 'overview' ); // for demo purposes only
+
+					},
+					price: 230
+				} );
+
+
+			})();
+		</script>
+	</body>
+</html>

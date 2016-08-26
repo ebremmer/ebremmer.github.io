@@ -1,9 +1,0 @@
-#player {
-  min-width: 900px;
-  width: == ::window[width] - 480;
-  height: == ::window[height] - 480;
-  center-x: == ::window[center-x];
-  /*center-y: == ::window[center-y];*/
-  top: == ::window[top] + 100;
-  border-radius: == [outer-radius];
-}

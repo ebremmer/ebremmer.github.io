@@ -279,7 +279,7 @@
 
 			// var messageEl = theForm.querySelector( '.final-message' );
 			var me = this;
-			var evName = window.location.pathname.split('/')[1];
+			var evName = getParameterByName('e');
 			var evDate = getParameterByName('eon');
 
 			$.ajax({
