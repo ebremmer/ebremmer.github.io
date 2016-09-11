@@ -295,63 +295,33 @@
 					eventOn: evDate
 				}
 			}).done(function (regres) {
-				console.log(regres);
+
 				if ('success' === regres.result) {
 					try {
 						fbq('track', 'Purchase', { value: '1.00', currency: 'PLN' });
-					} catch (e) { }
-
+					} catch (e) { Raven.captureException(e); }
+						
 					if (regres.trxRequest) {
 						window.location = regres.trxRequest;
 					} else {
+							var trxReq = new Error("Registration unsucessfull - " + regres.trxRequest);
+							Raven.captureException(trxReq);
 							alert(
 								'Wystąpił problem, prosimy o infromacje na kontakt@dentalprocess.pl'
 							);
 					}					
-					// $.ajax({
-					// 			url: 'https://sandbox.przelewy24.pl/index.php',
-					// 			type: 'POST',
-					// 			data: {
-					// 				p24_merchant_id: 33685,
-					// 				p24_pos_id: 33685,
-					// 				p24_session_id: regres.txn + "-" + evName,
-					// 				p24_amount: self.options.price * 100,
-					// 				p24_currency: 'PLN',
-					// 				p24_description: regres.txn + "-" + evName,
-					// 				p24_email: self.formEl[2].value,
-					// 				p24_country: 'PL',
-					// 				p24_language: 'pl',
-					// 				p24_url_return: 'https://dentalprocess.pl/thanks.html?tid=' + regres.txn,
-					// 				p24_api_version: '3.2',
-					// 				p24_sign: regres.sign
-					// 			}
-					// 		}).done(function (p24res) {					
-					// 			if (p24res.error === 0) {
-					// 				window.location = 'https://secure.przelewy24.pl/trnRequest/' + p24res.token;
-					// 			}
-					// 		}).fail(function() {
-					// 			me._showError(
-					// 							'Wystąpił problem, prosimy o infromacje na kontakt@dentalprocess.pl'
-					// 						);
-					// 		});
-
-										
-				// var nlocation =
-				// 	"https://sklep.przelewy24.pl/zakup.php?z24_id_sprzedawcy=33685&z24_currency=pln&z24_return_url=https%3A%2F%2Fdentalprocess.pl%2Fthanks.html%3Fpid%3D" + regres.txn + "&z24_language=pl&k24_kraj=PL&z24_crc=e12a94ef" +
-				// 	"&z24_nazwa=" + encodeURIComponent(regres.txn +
-				// 		"-" + evName) + "&z24_kwota=" + encodeURIComponent((
-				// 			self.options.price * 100)) + "&k24_nazwa=" +
-				// 	encodeURIComponent(self.formEl[0].value) +
-				// 	"&k24_email=" + encodeURIComponent(self.formEl[2].value);
-				// console.log(nlocation);
-				// window.location = nlocation;
 				} else {
+					var trxReq = new Error("Registration unsucessfull - " + regres.result);
+					Raven.captureException(trxReq);
 					me._showError(
 									'Wystąpił problem, prosimy o infromacje na kontakt@dentalprocess.pl'
 								);
 				}
 			})
-			.fail(function() {
+			.fail(function( jqXHR, textStatus, errorThrown ) {
+				
+				Raven.captureException(errorThrown);
+				
 				me._showError(
 								'Wystąpił problem, prosimy o infromacje na kontakt@dentalprocess.pl'
 							);
