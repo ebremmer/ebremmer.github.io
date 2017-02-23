@@ -1,0 +1,7 @@
+{
+  "name": "DentalProcess",
+  "image": "https://dentalprocess.pl/static/f3d6304e30.png",
+  "url": "https://dentalprocess.pl",
+  "email": "kontakt@dentalprocess.pl",
+  "revocationList": "https://dentalprocess.pl/revoked.json"
+}
