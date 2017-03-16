@@ -1,0 +1,8 @@
+{
+  "name": "EndoHero",
+  "description": "Kurs Profesjonalnej asysty podczas leczenia endodontycznego z użyciem mikroskopu. Omówienie specyfiki pracy podczas leczenia kanałowego, wszystkich narzędzi i materiałów oraz prawidłowego ułożenia ich na asystorach. Techniki pracy na cztery ręce , praktyki zakładania koferdamu i ergonomicznej pracy z lekarzem na cztery...",
+  "image": "https://dentalprocess.pl/endohero/endohero-ref-badge.png",
+  "criteria": "https://dentalprocess.pl/endohero/criteria.html",
+  "tags": ["kurs", "szkolenie", "endodoncja", "praca", "cztery", "rece", "endohero"],
+  "issuer": "https://dentalprocess.pl/organization.json",
+}
