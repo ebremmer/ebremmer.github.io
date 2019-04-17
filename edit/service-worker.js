@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "https://dentalprocess.pl/edit/precache-manifest.e94b5841fde67c97e3afc0257c6f2c2b.js"
+  "https://dentalprocess.pl/edit/precache-manifest.d4b0154513749ad978e693c2da5f6af2.js"
 );
 
 workbox.clientsClaim();
