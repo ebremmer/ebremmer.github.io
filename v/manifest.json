@@ -1,0 +1,23 @@
+{
+    "name": "Weryfikacja Certyfikatu",
+    "short_name": "Weryfikator",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#3d2b4c",
+    "theme_color": "#3d2b4c",
+    "description": "Weryfikacja Certyfikatu Dentalprocess.pl",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "/assets/0eaa4def4e92a3d9dee37ed452c59801.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/0eaa4def4e92a3d9dee37ed452c59801.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
