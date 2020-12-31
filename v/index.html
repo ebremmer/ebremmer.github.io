@@ -11,7 +11,7 @@
     Fore more details:
     * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
   -->
-  <base href="/v/">
+  <base href="/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -34,11 +34,16 @@
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
   <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('flutter-first-frame', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js?v=2283225001');
-      });
+    var params = window.location.search.match(/\?c=([a-zA-Z0-9]+)\+([a-zA-Z0-9]+)/);
+    if (params && params.length === 3) {
+      window.location.href = "/#/" + params[1] + "/" + params[2]
     }
+
+    // if ('serviceWorker' in navigator) {
+    //   window.addEventListener('flutter-first-frame', function () {
+    //     navigator.serviceWorker.register('flutter_service_worker.js?v=2027475730');
+    //   });
+    // }
   </script>
   <script src="main.dart.js" type="application/javascript"></script>
 </body>
