@@ -57,11 +57,11 @@ Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których
         },
         "offer": {
           "@type": "Offer",
-          "price": "550",
+          "price": "599",
           "priceCurrency": "PLN"
         },
-        "startDate": "2022-11-26T08:00:00.000Z",
-        "endDate": "2022-11-26T15:00:00.000Z",
+        "startDate": "2023-01-28T07:00:00.000Z",
+        "endDate": "2023-01-28T15:00:00.000Z",
         "url": "/xassist",
         "organizer": {
           "@type": "Organization",
@@ -130,11 +130,20 @@ Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których
     font-size: 1rem;
     line-height: 1.42857;
   }
-  .Bd\(c\) {
+  .Bd\(rb\) {
+  border: 2px solid #432d4a;
+}
+.Bd\(c\) {
   border: 1px solid #432d4a;
 }
 .Bdt\(iml\) {
   border-top: 1px solid #f3f3f3;
+}
+.Bdrs\(3px\) {
+  border-radius: 3px;
+}
+.Bgc\(\#fcfcfc\) {
+  background-color: #fcfcfc;
 }
 .Bgc\(\#ffffff\) {
   background-color: #ffffff;
@@ -145,8 +154,11 @@ Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których
 .Bgc\(\#432d4a\) {
   background-color: #432d4a;
 }
-.Bgc\(\#fcfcfc\) {
-  background-color: #fcfcfc;
+.Bgc\(\#4cdbae\) {
+  background-color: #4cdbae;
+}
+.Bgc\(\#432d4a\)\:h:hover {
+  background-color: #432d4a;
 }
 .Bxz\(bb\) {
   box-sizing: border-box;
@@ -165,6 +177,9 @@ Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których
 }
 .C\(\#331d35\) {
   color: #331d35;
+}
+.C\(\#ffffff\)\:h:hover {
+  color: #ffffff;
 }
 .C\(\#1fc8db\)\:h:hover {
   color: #1fc8db;
@@ -193,14 +208,17 @@ Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których
 .Fl\(end\) {
   float: right;
 }
-.Ff\(L\) {
-  font-family: Lato, sans-serif;
-}
 .Ff\(os\) {
   font-family: Open Sans, sans-serif;
 }
+.Ff\(L\) {
+  font-family: Lato, sans-serif;
+}
 .Fw\(300\) {
   font-weight: 300;
+}
+.Fw\(100\) {
+  font-weight: 100;
 }
 .Fw\(400\) {
   font-weight: 400;
@@ -208,14 +226,11 @@ Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których
 .Fw\(600\) {
   font-weight: 600;
 }
-.Fw\(100\) {
-  font-weight: 100;
+.Fz\(80px\) {
+  font-size: 80px;
 }
 .Fz\(1\.1em\) {
   font-size: 1.1em;
-}
-.Fz\(0\.9em\) {
-  font-size: 0.9em;
 }
 .Fz\(12px\) {
   font-size: 12px;
@@ -235,14 +250,14 @@ Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których
 .Fz\(22px\) {
   font-size: 22px;
 }
-.Fz\(24px\) {
-  font-size: 24px;
+.Fz\(0\.9em\) {
+  font-size: 0.9em;
 }
 .Fz\(46px\) {
   font-size: 46px;
 }
-.Fz\(80px\) {
-  font-size: 80px;
+.Fz\(24px\) {
+  font-size: 24px;
 }
 .H\(90px\) {
   height: 90px;
@@ -250,14 +265,20 @@ Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których
 .Lh\(1\.5em\) {
   line-height: 1.5em;
 }
+.Lh\(1\.6em\) {
+  line-height: 1.6em;
+}
 .Lh\(1em\) {
   line-height: 1em;
 }
 .Lh\(46px\) {
   line-height: 46px;
 }
-.Lh\(1\.6em\) {
-  line-height: 1.6em;
+.Lh\(60px\) {
+  line-height: 60px;
+}
+.M\(0\) {
+  margin: 0;
 }
 .M\(0px\) {
   margin: 0px;
@@ -267,9 +288,6 @@ Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których
 }
 .M\(a\) {
   margin: auto;
-}
-.M\(0\) {
-  margin: 0;
 }
 .Mx\(10px\) {
   margin-left: 10px;
@@ -294,20 +312,20 @@ Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których
 .Mt\(15px\) {
   margin-top: 15px;
 }
+.Mt\(20px\) {
+  margin-top: 20px;
+}
 .Mt\(0\.9em\) {
   margin-top: 0.9em;
 }
 .Mt\(30px\) {
   margin-top: 30px;
 }
-.Mt\(20px\) {
-  margin-top: 20px;
+.Mb\(30px\) {
+  margin-bottom: 30px;
 }
 .Mb\(-75px\) {
   margin-bottom: -75px;
-}
-.Mb\(30px\) {
-  margin-bottom: 30px;
 }
 .Mstart\(0\.6em\) {
   margin-left: 0.6em;
@@ -317,9 +335,6 @@ Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których
 }
 .Maw\(100\%\) {
   max-width: 100%;
-}
-.Maw\(1400px\) {
-  max-width: 1400px;
 }
 .Maw\(1500px\) {
   max-width: 1500px;
@@ -339,23 +354,26 @@ Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których
 .Maw\(90px\) {
   max-width: 90px;
 }
+.Maw\(1400px\) {
+  max-width: 1400px;
+}
 .Mih\(500px\) {
   min-height: 500px;
-}
-.Mih\(40px\) {
-  min-height: 40px;
 }
 .Mih\(90px\) {
   min-height: 90px;
 }
-.Miw\(320px\) {
-  min-width: 320px;
+.Mih\(40px\) {
+  min-height: 40px;
 }
 .Miw\(340px\) {
   min-width: 340px;
 }
 .Miw\(90px\) {
   min-width: 90px;
+}
+.Miw\(320px\) {
+  min-width: 320px;
 }
 .O\(n\) {
   outline: none;
@@ -385,6 +403,14 @@ Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których
   padding-left: 1em;
   padding-right: 1em;
 }
+.Py\(0\.55em\) {
+  padding-top: 0.55em;
+  padding-bottom: 0.55em;
+}
+.Py\(0\.5em\) {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
 .Py\(2em\) {
   padding-top: 2em;
 }
@@ -403,15 +429,15 @@ Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których
 .Py\(40px\) {
   padding-bottom: 40px;
 }
-.Py\(0\.55em\) {
-  padding-top: 0.55em;
-  padding-bottom: 0.55em;
-}
-.Pt\(20px\) {
-  padding-top: 20px;
+.Py\(50px\) {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 .Pt\(100px\) {
   padding-top: 100px;
+}
+.Pt\(20px\) {
+  padding-top: 20px;
 }
 .Pb\(20px\) {
   padding-bottom: 20px;
@@ -425,11 +451,11 @@ Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których
 .Ta\(c\) {
   text-align: center;
 }
-.Ta\(start\) {
-  text-align: left;
-}
 .Ta\(e\) {
   text-align: end;
+}
+.Ta\(start\) {
+  text-align: left;
 }
 .Td\(n\) {
   text-decoration: none;
@@ -526,11 +552,13 @@ Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których
     <div class="Maw(900px) Fw(300) Fz(1em) Lh(1.5em) Mx(a) Px(1em) Fz(1.5em)--sm Lh(1.7em)--sm Fz(1.5em)--md Lh(1.7em)--md Fw(300)--md"><p>Jedyne takie Szkolenie Prawa Ręka w RTG dla Higienistek I Asystentek Stomatologicznych.
 Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których niedłącznym elementem leczenia jest wykonywanie zdjęć rentgenowskich. Zgłębimy wiedzę na temat prawidłowego ustawiania pacjenta do zdjęć: pantomograficznych, cefalometrycznychych, punktowych/przylegających, skrzydłowo-zgryzowych, tomografii  komputerowej oraz zdjęć fotograficznych zewnątrz i wewnątrzustnych do dokumenacji etapów leczenia. Opowiemy jak zaopiekować się pacjentem w gabinecie RTG. Przekażemy też niezbędną wiedzę do odczytywania zdjęć na potrzeby gabinetu higieny i nie tylko. Wszystko omówione zostanie na autentycznych przypadkach pacjentów. Zaprosimy też do profesjonalnego gabinetu , gdzie pokażemy praktykę ustawiania i wykonywania zdjęć.</p>
 </div>
-  </div>false<div class="Ta(c) Mt(20px) Ff(L) Py(30px)">
+  </div>false<div class="Ta(c) Ff(L) Bgc(#4cdbae) C(#432d4a) Py(50px) Lh(60px)">
+    <a href="/rejestracja?e=rec6okvYwk8xdRCMZ&discount=" class="Bd(rb) C(#432d4a) Bdrs(3px) Px(1em) Py(0.5em) Ff(L) Fz(22px) C(#ffffff):h Bgc(#432d4a):h">Rejestruj 28.01.2023</a>
+  </div><div class="Ta(c) Mt(20px) Ff(L) Py(30px)">
       <div class="IbBox Maw(300px) W(25%)--lg W(50%)--sm W(100%)--xs P(20px) Bgc(#ffffff)">
         <amp-img src="https://dentalprocess.pl/static/fd6909d9c3.png" alt="Dental Process logo" width="180" height="180"></amp-img>
         <p class="Fz(24px) C(#432d4a)">Termin</p>
-        <p class="Maw(900px) Fz(18px) M(a)">26 listopada 2022 g.10:00</p>
+        <p class="Maw(900px) Fz(18px) M(a)">28 stycznia 2023 g.9:00</p>
       </div>
       <div class="IbBox Maw(300px) W(25%)--lg W(50%)--sm W(100%)--xs P(20px) Bgc(#ffffff)">
         <amp-img src="https://dentalprocess.pl/static/94365219a0.png" alt="Dental Process logo" width="180" height="180"></amp-img>
@@ -556,7 +584,7 @@ Przygotowaliśmy potrzebną wiedzę do pracy w klinikach i gabinetach w których
           <amp-img src="https://dentalprocess.pl/static/7ed6a401f9.png" alt="Dental Process logo" width="180" height="180"></amp-img>
           <p class="Fz(24px) C(#432d4a)">Cena</p>
           <p class="Maw(900px) Fz(18px) M(a)">
-            550 PLN
+            599 PLN
           </p>
       </div>
   </div><div class="Ta(c) Mt(20px) Ff(L) Bgc(#432d4a) C(#ffffff) Py(40px)">
