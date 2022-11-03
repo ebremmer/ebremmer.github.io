@@ -46,11 +46,20 @@
     font-size: 1rem;
     line-height: 1.42857;
   }
-  .Bd\(c\) {
+  .Bd\(rb\) {
+  border: 2px solid #432d4a;
+}
+.Bd\(c\) {
   border: 1px solid #432d4a;
 }
 .Bdt\(iml\) {
   border-top: 1px solid #f3f3f3;
+}
+.Bdrs\(3px\) {
+  border-radius: 3px;
+}
+.Bgc\(\#fcfcfc\) {
+  background-color: #fcfcfc;
 }
 .Bgc\(\#ffffff\) {
   background-color: #ffffff;
@@ -61,8 +70,11 @@
 .Bgc\(\#432d4a\) {
   background-color: #432d4a;
 }
-.Bgc\(\#fcfcfc\) {
-  background-color: #fcfcfc;
+.Bgc\(\#4cdbae\) {
+  background-color: #4cdbae;
+}
+.Bgc\(\#432d4a\)\:h:hover {
+  background-color: #432d4a;
 }
 .Bxz\(bb\) {
   box-sizing: border-box;
@@ -81,6 +93,9 @@
 }
 .C\(\#331d35\) {
   color: #331d35;
+}
+.C\(\#ffffff\)\:h:hover {
+  color: #ffffff;
 }
 .C\(\#1fc8db\)\:h:hover {
   color: #1fc8db;
@@ -109,14 +124,17 @@
 .Fl\(end\) {
   float: right;
 }
-.Ff\(L\) {
-  font-family: Lato, sans-serif;
-}
 .Ff\(os\) {
   font-family: Open Sans, sans-serif;
 }
+.Ff\(L\) {
+  font-family: Lato, sans-serif;
+}
 .Fw\(300\) {
   font-weight: 300;
+}
+.Fw\(100\) {
+  font-weight: 100;
 }
 .Fw\(400\) {
   font-weight: 400;
@@ -124,14 +142,11 @@
 .Fw\(600\) {
   font-weight: 600;
 }
-.Fw\(100\) {
-  font-weight: 100;
+.Fz\(80px\) {
+  font-size: 80px;
 }
 .Fz\(1\.1em\) {
   font-size: 1.1em;
-}
-.Fz\(0\.9em\) {
-  font-size: 0.9em;
 }
 .Fz\(12px\) {
   font-size: 12px;
@@ -151,14 +166,14 @@
 .Fz\(22px\) {
   font-size: 22px;
 }
-.Fz\(24px\) {
-  font-size: 24px;
+.Fz\(0\.9em\) {
+  font-size: 0.9em;
 }
 .Fz\(46px\) {
   font-size: 46px;
 }
-.Fz\(80px\) {
-  font-size: 80px;
+.Fz\(24px\) {
+  font-size: 24px;
 }
 .H\(90px\) {
   height: 90px;
@@ -166,14 +181,20 @@
 .Lh\(1\.5em\) {
   line-height: 1.5em;
 }
+.Lh\(1\.6em\) {
+  line-height: 1.6em;
+}
 .Lh\(1em\) {
   line-height: 1em;
 }
 .Lh\(46px\) {
   line-height: 46px;
 }
-.Lh\(1\.6em\) {
-  line-height: 1.6em;
+.Lh\(60px\) {
+  line-height: 60px;
+}
+.M\(0\) {
+  margin: 0;
 }
 .M\(0px\) {
   margin: 0px;
@@ -183,9 +204,6 @@
 }
 .M\(a\) {
   margin: auto;
-}
-.M\(0\) {
-  margin: 0;
 }
 .Mx\(10px\) {
   margin-left: 10px;
@@ -210,20 +228,20 @@
 .Mt\(15px\) {
   margin-top: 15px;
 }
+.Mt\(20px\) {
+  margin-top: 20px;
+}
 .Mt\(0\.9em\) {
   margin-top: 0.9em;
 }
 .Mt\(30px\) {
   margin-top: 30px;
 }
-.Mt\(20px\) {
-  margin-top: 20px;
+.Mb\(30px\) {
+  margin-bottom: 30px;
 }
 .Mb\(-75px\) {
   margin-bottom: -75px;
-}
-.Mb\(30px\) {
-  margin-bottom: 30px;
 }
 .Mstart\(0\.6em\) {
   margin-left: 0.6em;
@@ -233,9 +251,6 @@
 }
 .Maw\(100\%\) {
   max-width: 100%;
-}
-.Maw\(1400px\) {
-  max-width: 1400px;
 }
 .Maw\(1500px\) {
   max-width: 1500px;
@@ -255,23 +270,26 @@
 .Maw\(90px\) {
   max-width: 90px;
 }
+.Maw\(1400px\) {
+  max-width: 1400px;
+}
 .Mih\(500px\) {
   min-height: 500px;
-}
-.Mih\(40px\) {
-  min-height: 40px;
 }
 .Mih\(90px\) {
   min-height: 90px;
 }
-.Miw\(320px\) {
-  min-width: 320px;
+.Mih\(40px\) {
+  min-height: 40px;
 }
 .Miw\(340px\) {
   min-width: 340px;
 }
 .Miw\(90px\) {
   min-width: 90px;
+}
+.Miw\(320px\) {
+  min-width: 320px;
 }
 .O\(n\) {
   outline: none;
@@ -301,6 +319,14 @@
   padding-left: 1em;
   padding-right: 1em;
 }
+.Py\(0\.55em\) {
+  padding-top: 0.55em;
+  padding-bottom: 0.55em;
+}
+.Py\(0\.5em\) {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
 .Py\(2em\) {
   padding-top: 2em;
 }
@@ -319,15 +345,15 @@
 .Py\(40px\) {
   padding-bottom: 40px;
 }
-.Py\(0\.55em\) {
-  padding-top: 0.55em;
-  padding-bottom: 0.55em;
-}
-.Pt\(20px\) {
-  padding-top: 20px;
+.Py\(50px\) {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 .Pt\(100px\) {
   padding-top: 100px;
+}
+.Pt\(20px\) {
+  padding-top: 20px;
 }
 .Pb\(20px\) {
   padding-bottom: 20px;
@@ -341,11 +367,11 @@
 .Ta\(c\) {
   text-align: center;
 }
-.Ta\(start\) {
-  text-align: left;
-}
 .Ta\(e\) {
   text-align: end;
+}
+.Ta\(start\) {
+  text-align: left;
 }
 .Td\(n\) {
   text-decoration: none;
@@ -450,7 +476,7 @@
       </script>
     </amp-analytics>
 
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"DentalProcess","url":"https://dentalprocess.pl","logo":"https://dentalprocess.pl/dp-bd8bb1f3af.png","telephone":"+48 509 964 032","email":"kontakt@dentalprocess.pl","event":[{"@type":"CourseInstance","name":"EndoHero","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533572693/endohero/endohero.jpg","location":{"@type":"Place","name":"Dental Premium","address":{"@type":"PostalAddress","name":"Dental Premium","addressLocality":"Śrutowa 15"},"url":"https://www.dentalpremium.pl/"},"offer":{"@type":"Offer","price":550,"priceCurrency":"PLN"},"startDate":"2022-11-19T07:00:00.000Z","endDate":"2022-11-19T15:00:00.000Z","url":"https://dentalprocess.pl/endohero"},{"@type":"CourseInstance","name":"PerfectWhite","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533571076/perfectwhite/perfectwhite.jpg","location":{"@type":"Place","name":"Klinika Platinum","address":{"@type":"PostalAddress","name":"Klinika Platinum","addressLocality":"Księcia Witolda 49"},"url":"https://www.platinum-klinika.pl/"},"offer":{"@type":"Offer","price":599,"priceCurrency":"PLN"},"startDate":"2022-12-03T08:00:00.000Z","endDate":"2022-12-03T15:00:00.000Z","url":"https://dentalprocess.pl/perfectwhite"},{"@type":"CourseInstance","name":"Crown Master","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533572508/crownmaster/crownmaster.jpg","location":{"@type":"Place","name":"Dental Premium","address":{"@type":"PostalAddress","name":"Dental Premium","addressLocality":"Śrutowa 15"},"url":"https://www.dentalpremium.pl/"},"offer":{"@type":"Offer","price":530,"priceCurrency":"PLN"},"startDate":"2022-12-03T09:00:00.000Z","endDate":"2022-12-03T15:00:00.000Z","url":"https://dentalprocess.pl/crownmaster"},{"@type":"CourseInstance","name":"Higienizacja od A do Z","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533572034/higienizacja-odadoz/higienizacja-odadoz.jpg","location":{"@type":"Place","name":"Klinika Platinum","address":{"@type":"PostalAddress","name":"Klinika Platinum","addressLocality":"Księcia Witolda 49"},"url":"https://www.platinum-klinika.pl/"},"offer":{"@type":"Offer","price":699,"priceCurrency":"PLN"},"startDate":"2022-11-12T08:00:00.000Z","endDate":"2022-11-12T15:00:00.000Z","url":"https://dentalprocess.pl/higienizacja-odadoz"},{"@type":"CourseInstance","name":"PerioXpert","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533571411/perioxpert/perioxpert.jpg","location":{"@type":"Place","name":"PURO Wrocław Stare Miasto","address":{"@type":"PostalAddress","name":"PURO Wrocław Stare Miasto","addressLocality":"ul. Pawła Włodkowica 6"},"url":"http://purohotel.pl/wroclaw/"},"offer":{"@type":"Offer","price":620,"priceCurrency":"PLN"},"startDate":"2022-12-17T09:00:00.000Z","endDate":"2022-12-17T15:00:00.000Z","url":"https://dentalprocess.pl/perioxpert"},{"@type":"CourseInstance","name":"Practical Perio","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1664224458/practical-perio/practical-perio-poster.jpg","location":{"@type":"Place","name":"Klinika Platinum","address":{"@type":"PostalAddress","name":"Klinika Platinum","addressLocality":"Księcia Witolda 49"},"url":"https://www.platinum-klinika.pl/"},"offer":{"@type":"Offer","price":1200,"priceCurrency":"PLN"},"startDate":"2022-11-26T09:00:00.000Z","endDate":"2022-11-26T15:00:00.000Z","url":"https://dentalprocess.pl/practical-perio"},{"@type":"CourseInstance","name":"X-Assist","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533571622/xassist/xassist.jpg","location":{"@type":"Place","name":"Klinika Platinum","address":{"@type":"PostalAddress","name":"Klinika Platinum","addressLocality":"Księcia Witolda 49"},"url":"https://www.platinum-klinika.pl/"},"offer":{"@type":"Offer","price":550,"priceCurrency":"PLN"},"startDate":"2022-11-26T08:00:00.000Z","endDate":"2022-11-26T15:00:00.000Z","url":"https://dentalprocess.pl/xassist"},{"@type":"CourseInstance","name":"ImplantMagic","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533573660/implantmagic/implantmagic.jpg","location":{"@type":"Place","name":"Dental Premium","address":{"@type":"PostalAddress","name":"Dental Premium","addressLocality":"Śrutowa 15"},"url":"https://www.dentalpremium.pl/"},"offer":{"@type":"Offer","price":520,"priceCurrency":"PLN"},"startDate":"2022-11-19T08:00:00.000Z","endDate":"2022-11-19T15:00:00.000Z","url":"https://dentalprocess.pl/implantmagic"},{"@type":"CourseInstance","name":"OrthoDay","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533572210/orthoday/orthoday.jpg","location":{"@type":"Place","name":"PURO Wrocław Stare Miasto","address":{"@type":"PostalAddress","name":"PURO Wrocław Stare Miasto","addressLocality":"ul. Pawła Włodkowica 6"},"url":"http://purohotel.pl/wroclaw/"},"offer":{"@type":"Offer","price":620,"priceCurrency":"PLN"},"startDate":"2022-12-10T07:00:00.000Z","endDate":"2022-12-10T15:00:00.000Z","url":"https://dentalprocess.pl/orthoday"},{"@type":"CourseInstance","name":"X-Assist","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533571622/xassist/xassist.jpg","location":{"@type":"Place","name":"Klinika Platinum","address":{"@type":"PostalAddress","name":"Klinika Platinum","addressLocality":"Księcia Witolda 49"},"url":"https://www.platinum-klinika.pl/"},"offer":{"@type":"Offer","price":599,"priceCurrency":"PLN"},"startDate":"2023-01-28T08:00:00.000Z","endDate":"2023-01-28T15:00:00.000Z","url":"https://dentalprocess.pl/xassist"}]}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"DentalProcess","url":"https://dentalprocess.pl","logo":"https://dentalprocess.pl/dp-bd8bb1f3af.png","telephone":"+48 509 964 032","email":"kontakt@dentalprocess.pl","event":[{"@type":"CourseInstance","name":"EndoHero","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533572693/endohero/endohero.jpg","location":{"@type":"Place","name":"Dental Premium","address":{"@type":"PostalAddress","name":"Dental Premium","addressLocality":"Śrutowa 15"},"url":"https://www.dentalpremium.pl/"},"offer":{"@type":"Offer","price":550,"priceCurrency":"PLN"},"startDate":"2022-11-19T07:00:00.000Z","endDate":"2022-11-19T15:00:00.000Z","url":"https://dentalprocess.pl/endohero"},{"@type":"CourseInstance","name":"PerfectWhite","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533571076/perfectwhite/perfectwhite.jpg","location":{"@type":"Place","name":"Klinika Platinum","address":{"@type":"PostalAddress","name":"Klinika Platinum","addressLocality":"Księcia Witolda 49"},"url":"https://www.platinum-klinika.pl/"},"offer":{"@type":"Offer","price":599,"priceCurrency":"PLN"},"startDate":"2022-12-03T08:00:00.000Z","endDate":"2022-12-03T15:00:00.000Z","url":"https://dentalprocess.pl/perfectwhite"},{"@type":"CourseInstance","name":"Crown Master","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533572508/crownmaster/crownmaster.jpg","location":{"@type":"Place","name":"Dental Premium","address":{"@type":"PostalAddress","name":"Dental Premium","addressLocality":"Śrutowa 15"},"url":"https://www.dentalpremium.pl/"},"offer":{"@type":"Offer","price":530,"priceCurrency":"PLN"},"startDate":"2022-12-03T09:00:00.000Z","endDate":"2022-12-03T15:00:00.000Z","url":"https://dentalprocess.pl/crownmaster"},{"@type":"CourseInstance","name":"Higienizacja od A do Z","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533572034/higienizacja-odadoz/higienizacja-odadoz.jpg","location":{"@type":"Place","name":"Klinika Platinum","address":{"@type":"PostalAddress","name":"Klinika Platinum","addressLocality":"Księcia Witolda 49"},"url":"https://www.platinum-klinika.pl/"},"offer":{"@type":"Offer","price":699,"priceCurrency":"PLN"},"startDate":"2022-11-12T08:00:00.000Z","endDate":"2022-11-12T15:00:00.000Z","url":"https://dentalprocess.pl/higienizacja-odadoz"},{"@type":"CourseInstance","name":"PerioXpert","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533571411/perioxpert/perioxpert.jpg","location":{"@type":"Place","name":"PURO Wrocław Stare Miasto","address":{"@type":"PostalAddress","name":"PURO Wrocław Stare Miasto","addressLocality":"ul. Pawła Włodkowica 6"},"url":"http://purohotel.pl/wroclaw/"},"offer":{"@type":"Offer","price":620,"priceCurrency":"PLN"},"startDate":"2022-12-17T09:00:00.000Z","endDate":"2022-12-17T15:00:00.000Z","url":"https://dentalprocess.pl/perioxpert"},{"@type":"CourseInstance","name":"Practical Perio","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1664224458/practical-perio/practical-perio-poster.jpg","location":{"@type":"Place","name":"Klinika Platinum","address":{"@type":"PostalAddress","name":"Klinika Platinum","addressLocality":"Księcia Witolda 49"},"url":"https://www.platinum-klinika.pl/"},"offer":{"@type":"Offer","price":1200,"priceCurrency":"PLN"},"startDate":"2022-11-26T09:00:00.000Z","endDate":"2022-11-26T15:00:00.000Z","url":"https://dentalprocess.pl/practical-perio"},{"@type":"CourseInstance","name":"X-Assist","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533571622/xassist/xassist.jpg","location":{"@type":"Place","name":"Klinika Platinum","address":{"@type":"PostalAddress","name":"Klinika Platinum","addressLocality":"Księcia Witolda 49"},"url":"https://www.platinum-klinika.pl/"},"offer":{"@type":"Offer","price":550,"priceCurrency":"PLN"},"startDate":"2022-11-26T08:00:00.000Z","endDate":"2022-11-26T15:00:00.000Z","url":"https://dentalprocess.pl/xassist"},{"@type":"CourseInstance","name":"ImplantMagic","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533573660/implantmagic/implantmagic.jpg","location":{"@type":"Place","name":"Dental Premium","address":{"@type":"PostalAddress","name":"Dental Premium","addressLocality":"Śrutowa 15"},"url":"https://www.dentalpremium.pl/"},"offer":{"@type":"Offer","price":520,"priceCurrency":"PLN"},"startDate":"2022-11-19T08:00:00.000Z","endDate":"2022-11-19T15:00:00.000Z","url":"https://dentalprocess.pl/implantmagic"},{"@type":"CourseInstance","name":"OrthoDay","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533572210/orthoday/orthoday.jpg","location":{"@type":"Place","name":"PURO Wrocław Stare Miasto","address":{"@type":"PostalAddress","name":"PURO Wrocław Stare Miasto","addressLocality":"ul. Pawła Włodkowica 6"},"url":"http://purohotel.pl/wroclaw/"},"offer":{"@type":"Offer","price":620,"priceCurrency":"PLN"},"startDate":"2022-12-10T07:00:00.000Z","endDate":"2022-12-10T15:00:00.000Z","url":"https://dentalprocess.pl/orthoday"},{"@type":"CourseInstance","name":"X-Assist","image":"https://res.cloudinary.com/dg1epwxqw/image/upload/v1533571622/xassist/xassist.jpg","location":{"@type":"Place","name":"Klinika Platinum","address":{"@type":"PostalAddress","name":"Klinika Platinum","addressLocality":"Księcia Witolda 49"},"url":"https://www.platinum-klinika.pl/"},"offer":{"@type":"Offer","price":599,"priceCurrency":"PLN"},"startDate":"2023-01-28T07:00:00.000Z","endDate":"2023-01-28T15:00:00.000Z","url":"https://dentalprocess.pl/xassist"}]}</script>
       
     
   </head>
