@@ -1,0 +1,70 @@
+name: deploy
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+env:
+  XC_DOCURL: ${{ vars.XC_DOCURL }}
+  XC_AUTH: ${{ secrets.XC_AUTH }}
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+      pages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Checkout another repository
+        uses: actions/checkout@v4
+        with:
+          repository: dp-ebr/dp_pages_next
+          path: dp_pages_next
+          token: ${{ secrets.ACCESS_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18" # You can adjust this version as needed
+
+      - name: Install dependencies and build
+        run: |
+          cd dp_pages_next
+          npm ci
+          npm i sharp
+          npm run build
+
+      - name: Checkout another repository
+        uses: actions/checkout@v4
+        with:
+          repository: dp-ebr/pages-static
+          path: pages-static
+          token: ${{ secrets.ACCESS_TOKEN }}
+
+      - name: Copy static files
+        run: |
+          cp -r ./pages-static/* ./dp_pages_next/build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # upload from dp_pages_next/build directory
+          path: "dp_pages_next/build"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
