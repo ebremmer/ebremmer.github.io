@@ -48,7 +48,7 @@ jobs:
       - name: Checkout another repository
         uses: actions/checkout@v4
         with:
-          repository: dp-ebr/pages-static
+          repository: ebremmer/pages-static
           path: pages-static
           token: ${{ secrets.ACCESS_TOKEN }}
 
