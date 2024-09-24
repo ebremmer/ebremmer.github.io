@@ -29,7 +29,7 @@ jobs:
       - name: Checkout another repository
         uses: actions/checkout@v4
         with:
-          repository: dp-ebr/dp_pages_next
+          repository: ebremmer/dp_pages_next
           path: dp_pages_next
           token: ${{ secrets.ACCESS_TOKEN }}
 
